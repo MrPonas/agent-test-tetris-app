@@ -1,37 +1,51 @@
 # agent-test-tetris-app
 
-A small test repository for building a Tetris-style web app while refining an AI-assisted development workflow.
+Lightweight Tetris-style web app scaffold built for AI-assisted workflow testing.
 
-## Current purpose
+## Stack
 
-This repo is intentionally starting with AI factory scaffolding before app code. The goal is to test a controlled loop:
+- Vite
+- React
+- TypeScript
+- Vitest
 
-1. Write a small task.
-2. Approve the task.
-3. Let an agent implement only that task.
-4. Run validation.
-5. Review the diff.
-6. Merge after human approval.
+## Getting started
 
-## Important files
-
-- `AGENTS.md` — canonical rules for all coding agents.
-- `CLAUDE.md` — Claude Code-specific instructions that point back to `AGENTS.md`.
-- `docs/product/PROJECT-BRIEF.md` — current product and workflow brief.
-- `docs/prd/PRD-TEMPLATE.md` — PRD template.
-- `docs/adr/ADR-TEMPLATE.md` — architecture decision template.
-- `.ai-factory/tasks/TASK-TEMPLATE.yaml` — reusable task template.
-- `.ai-factory/tasks/TASK-001-scaffold-tetris-app.yaml` — first draft implementation task.
-- `.ai-factory/agents/` — planner, coder, reviewer, QA, and security prompts.
-- `.ai-factory/scripts/` — validation and security wrapper scripts.
-
-## Validation
-
-After cloning, make scripts executable once:
+Install dependencies:
 
 ```bash
-chmod +x .ai-factory/scripts/*.sh
+npm install
 ```
+
+Start the app locally:
+
+```bash
+npm run dev
+```
+
+The initial screen renders a basic Tetris board placeholder (10x20 grid).
+
+## Build and test
+
+Type-check:
+
+```bash
+npm run typecheck
+```
+
+Run tests:
+
+```bash
+npm test
+```
+
+Build production assets:
+
+```bash
+npm run build
+```
+
+## Validation scripts
 
 Run fast validation:
 
@@ -45,6 +59,8 @@ Run full validation:
 .ai-factory/scripts/validate-full.sh
 ```
 
-## Next step
+## Workflow notes
 
-Use `.ai-factory/tasks/TASK-001-scaffold-tetris-app.yaml` to scaffold the first Vite + React + TypeScript version of the Tetris app.
+- Follow the rules in `AGENTS.md`.
+- Use `.ai-factory/tasks/` as scope control for agent implementations.
+- Keep changes small and task-bounded.
