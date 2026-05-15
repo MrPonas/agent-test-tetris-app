@@ -1,0 +1,24 @@
+name: AI Factory Checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Make scripts executable
+        run: chmod +x .ai-factory/scripts/*.sh
+
+      - name: Run fast validation
+        run: .ai-factory/scripts/validate-fast.sh
+
+      - name: Run security checks with available tools
+        run: .ai-factory/scripts/security.sh
