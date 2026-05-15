@@ -1,0 +1,53 @@
+id: TASK-001
+status: draft
+priority: high
+risk_level: low
+
+title: "Scaffold the Tetris web app"
+goal: "Create the initial lightweight Vite + React + TypeScript app structure for a browser-playable Tetris-style game."
+context: "This repo is testing an AI-assisted software factory workflow. The first product step is to scaffold a small frontend app without adding backend, auth, database, or deployment complexity."
+
+dependencies: []
+
+files_allowed:
+  - "package.json"
+  - "package-lock.json"
+  - "index.html"
+  - "vite.config.*"
+  - "tsconfig*.json"
+  - "src/**"
+  - "public/**"
+  - "README.md"
+  - ".gitignore"
+
+non_goals:
+  - "Do not add backend/API code."
+  - "Do not add authentication or user accounts."
+  - "Do not add deployment configuration."
+  - "Do not add complex state-management libraries."
+  - "Do not implement every final Tetris feature in this task."
+
+acceptance_criteria:
+  - "App starts locally with an npm script."
+  - "A basic Tetris game screen or placeholder game board is visible."
+  - "Project uses TypeScript."
+  - "There is at least one basic test setup or clear placeholder for game-logic tests."
+  - "README explains how to install, run, test, and validate."
+
+validation:
+  fast:
+    - ".ai-factory/scripts/validate-fast.sh"
+  full:
+    - ".ai-factory/scripts/validate-full.sh"
+
+human_gate:
+  before_start: false
+  before_merge: true
+  before_deploy: true
+
+agent_instructions:
+  - "Work only on this task."
+  - "Keep the scaffold lightweight."
+  - "Prefer Vite + React + TypeScript unless the human chooses another stack."
+  - "Do not commit, push, merge, or deploy unless explicitly instructed."
+  - "Report changed files and validation results."

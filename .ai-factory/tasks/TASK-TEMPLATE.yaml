@@ -1,0 +1,44 @@
+id: TASK-000
+status: draft # draft | approved | in_progress | blocked | done
+priority: medium # low | medium | high
+risk_level: low # low | medium | high
+
+title: ""
+goal: ""
+context: ""
+
+dependencies: []
+
+files_allowed:
+  - ""
+
+non_goals:
+  - ""
+
+acceptance_criteria:
+  - ""
+
+validation:
+  fast:
+    - ".ai-factory/scripts/validate-fast.sh"
+  full:
+    - ".ai-factory/scripts/validate-full.sh"
+
+human_gate:
+  before_start: false
+  before_merge: true
+  before_deploy: true
+
+agent_instructions:
+  - "Work only on this task."
+  - "Do not refactor unrelated code."
+  - "Do not commit, push, merge, or deploy unless explicitly instructed."
+  - "Report changed files and validation results."
+
+completion_report:
+  summary: ""
+  files_changed: []
+  commands_run: []
+  validation_result: ""
+  risks_or_limitations: []
+  suggested_next_task: ""
